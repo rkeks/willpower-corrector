@@ -1,0 +1,15 @@
+[Unit]
+Description=Willpower Corrector Service
+ 
+[Service]
+Type=simple
+User=username
+Group=usergroup
+ExecStart=/usr/bin/python3 /path/to/wpcs/main.py "WPCS daemon"
+Restart=always
+WorkingDirectory=/tmp
+Nice=19
+LimitNOFILE=16384
+ 
+[Install]
+WantedBy=multi-user.target
